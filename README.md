@@ -21,7 +21,7 @@ This project demonstrates real-world frontend engineering skills including data 
 
 ## 📸 Screenshots
 
-![Employee Dashboard](./screenshots/dashboard.png)
+![Employee Dashboard](./screenshots/Dashboard.png)
 
 ## 🛠️ Tech Stack
 
