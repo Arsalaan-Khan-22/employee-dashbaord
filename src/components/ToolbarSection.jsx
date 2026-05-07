@@ -30,7 +30,7 @@ const ToolbarSection = ({ gridRef, setSearch, onFilter }) => {
       <div className="flex gap-4 items-center">
         <select
           onChange={(e) => onFilter(e.target.value)}
-          className="border px-3 py-2 rounded-md text-sm"
+          className="border px-3 py-2 rounded-md text-sm cursor-pointer"
         >
           <option value="all">All</option>
           <option value="active">Active</option>

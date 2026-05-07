@@ -36,6 +36,29 @@ function App() {
     rowData.reduce((sum, emp) => sum + emp.performanceRating, 0) /
       rowData.length || 0;
 
+    const statsData = [
+    {
+      title: "Total Employees",
+      value: totalEmployees,
+      icon: <FaUsers />,
+    },
+    {
+      title: "Active Employees",
+      value: activeEmployees,
+      icon: <FaUserCheck />,
+    },
+    {
+      title: "Avg Salary",
+      value: avgSalary.toLocaleString(),
+      icon: <FaRupeeSign />,
+    },
+    {
+      title: "Avg Rating",
+      value: avgRating.toFixed(1),
+      icon: <FaStar />,
+    },
+  ];
+
   const handleFilter = (value) => {
     if (value === "active") {
       setRowData(allData.filter((e) => e.isActive));
@@ -63,26 +86,14 @@ function App() {
       ) : (
         <>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-6">
-            <StatsCard
-              title="Total Employees"
-              value={totalEmployees}
-              icon={<FaUsers />}
-            />
-            <StatsCard
-              title="Active Employees"
-              value={activeEmployees}
-              icon={<FaUserCheck />}
-            />
-            <StatsCard
-              title="Avg Salary"
-              value={avgSalary.toLocaleString()}
-              icon={<FaRupeeSign />}
-            />
-            <StatsCard
-              title="Avg Rating"
-              value={avgRating.toFixed(1)}
-              icon={<FaStar />}
-            />
+            {statsData.map((item, index) => (
+              <StatsCard
+                key={index}
+                title={item.title}
+                value={item.value}
+                icon={item.icon}
+              />
+            ))}
           </div>
           <ToolbarSection
             gridRef={gridRef}
