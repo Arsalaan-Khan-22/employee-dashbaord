@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+.ag-theme-alpine {
+  --ag-header-background-color: #f8fafc;
+  --ag-header-foreground-color: #111827;
+}
